@@ -55,14 +55,9 @@ model Episode {
 /// Ratings link users to media
 model Rating {
   userUsername String
+rating        Int
+review       String?
   mediaTmdbId  Int
-<<<<<<< HEAD
-  rating        Int
-=======
-  score        Int
->>>>>>> 408a45567b50bd69f65808f4be7b39a884eeaab2
-  review       String?
-  createdAt    DateTime @default(now())
   updatedAt    DateTime @default(now()) @updatedAt
 
   user  User  @relation(fields: [userUsername], references: [username], onDelete: Cascade)
@@ -74,6 +69,8 @@ model Rating {
 /// Each watchlist entry links one user ↔ one media item
 model Watchlist {
   userUsername String
+rating        Int
+
   mediaTmdbId  Int
   status       WatchStatus @default(PLANNED)
   createdAt    DateTime    @default(now())
