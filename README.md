@@ -1,7 +1,6 @@
 # HWW-CC
 
-**HWW** is a web page that lets users browse TV shows using **The Movie Database (TMDb) API**. Users can explore trending content, curated playlists, and **share reviews and ratings with each other**, creating a social hub for TV Show lovers. The frontend is built with **Vite + React** for a fast and modern development experience.
-
+**HWW** is a Health and Wellness Community Program Webpage that lets users connect and receive help in different variations of Health & Wellness. Our mission is to improve the quality of life, financial stability, mental health, and physical well-being of marginalized individuals and family units. We begin by meeting immediate needs through direct charitable services and verified support pathways, then advance long-term independence through structured programs centered on childcare, employment stability, and whole-family systems of care.
 
 [Demo of SceneIt App]
 
