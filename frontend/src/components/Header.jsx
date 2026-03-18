@@ -2,15 +2,14 @@ import { useState, useEffect } from "react";
 import { TextSearch } from 'lucide-react';
 import { NavLink, useLocation } from 'react-router-dom';
 import SearchSidebar from "./SearchSidebar";
+import { ContactModal } from "./modals/ContactModal"; // ✅ new import
 
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [user, setUser] = useState(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const location = useLocation();
 
-  // Scroll threshold for header style
   useEffect(() => {
     const handleScroll = () => {
       const threshold = 8;
@@ -20,30 +19,21 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  /// get user from localStorage after signed in/up from AuthPage
-  useEffect(() => {
-    const storedUser = localStorage.getItem("user");
-    if (storedUser) {
-      setUser(JSON.parse(storedUser));
-    }
-  }, [location]);
-
-
   return (
     <>
       <header
         id="header"
         className={`min-w-md fixed top-0 left-0 right-0 z-50 transition-[width,margin,padding,transform,background-color,border-radius] duration-700 ease-in-out ${isScrolled
-          ? "w-[92%] bg-[#05000c] text-gray-100 mt-6 px-10 py-6 shadow-[0px_2px_18px_4px_rgba(255,255,255,0.48)] rounded-2xl border-3 border-white/30 mx-auto"
+          ?"w-[92%] bg-[#D4A017]/70 text-gray-900 mt-6 px-10 py-6 shadow-[0px_4px_24px_6px_rgba(212,160,23,0.6)] rounded-2xl border-3 border-[#D4A017]/60 mx-auto backdrop-blur-md"
+
           : "w-full backdrop-blur-sm text-gray-900 py-8 px-20 bg-transparent"
           }`}
       >
-        <div className="flex justify-between items-center">
-          {/* Logo */}
-          <NavLink to='/' className="text-4xl font-bold text-gray-700 dark:text-white cursor-pointer flex items-center gap-2">
-            <img src="/sceneit.png" width={35} alt="SceneIt" />
-            <span className='hidden lg:inline'>SceneIt</span>
-          </NavLink>
+       <div className="flex justify-between items-center">
+                 {/* Logo */}
+                 <NavLink to='/' className="cursor-pointer flex items-center">
+                   <img src="/HealthWealthnobackground.PNG" alt="HealthWealth" className="h-32 w-auto object-contain" />
+                 </NavLink>
 
           {/* Nav */}
           <nav
@@ -53,32 +43,31 @@ export default function Header() {
               }`}
           >
             <ul className="flex space-x-8 items-center text-gray-700 dark:text-gray-300 transition-all duration-200">
-              {/* Browse */}
-              <NavLink to='/search' className='font-semibold text-lg cursor-pointer hover:underline'>
-                <li>Browse</li>
+              {/* About Us */}
+              <NavLink to='#' className='font-semibold text-lg cursor-pointer hover:text-[#C9A84C] hover:underline'>
+                <li>About Us</li>
               </NavLink>
 
-              {/* Conditional Auth Logic */}
-              {!user ? (
-                <NavLink to='/auth' className='font-semibold text-lg cursor-pointer hover:underline'>
-                  <li>Login</li>
-                </NavLink>
-              ) : (
-                <NavLink to={`/${user.username}`} className='font-semibold text-lg cursor-pointer hover:underline'>
-                  <li>@{user.username}</li>
-                </NavLink>
-              )}
+              {/* Join Us */}
+              <NavLink to='#' className='font-semibold text-lg cursor-pointer hover:text-[#C9A84C] hover:underline'
+              >
+                <li>Join Us</li>
+              </NavLink>
+
+              {/* Contact */}
+              <li>
+                <ContactModal />
+              </li>
 
               {/* Search Icon */}
               <li>
                 <TextSearch
                   onClick={() => setIsSidebarOpen(true)}
                   size={24}
-                  className='cursor-pointer hover:scale-[1.15] transition-all duration-300 hover:text-green-400'
+                  className='cursor-pointer hover:scale-[1.15] transition-all duration-300 hover:text-[#C9A84C]'
                 />
               </li>
             </ul>
-
           </nav>
         </div>
       </header>
