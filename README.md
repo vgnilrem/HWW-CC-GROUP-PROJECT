@@ -1,21 +1,20 @@
 # HWW-CC
 
-**HWW** is a web page that lets users browse TV shows using **The Movie Database (TMDb) API**. Users can explore trending content, curated playlists, and **share reviews and ratings with each other**, creating a social hub for TV Show lovers. The frontend is built with **Vite + React** for a fast and modern development experience.
+**HWW** is a Health and Wellness Community Program Webpage that lets users connect and receive help in different variations of Health & Wellness. Our mission is to improve the quality of life, financial stability, mental health, and physical well-being of marginalized individuals and family units. We begin by meeting immediate needs through direct charitable services and verified support pathways, then advance long-term independence through structured programs centered on childcare, employment stability, and whole-family systems of care.
 
-
-[Demo of SceneIt App]
+[Demo of HWW App]
 
 ![REVIEWS](https://github.com/user-attachments/assets/42eb8a31-a5ef-4175-87a6-7ec5d7a6e8b2)
 
 
 [Check out the Live Demo here →](https://sceneit1111.netlify.app/)
 
-## Features
+## Features Coming SOON!
 
-- **Trending Shows**: Browse weekly trending movies and TV shows.  
-- **Curated Playlists**: Playlists with mini-show posters and hover effects.  
-- **User Reviews**: Post reviews and ratings for TV shows with other users.  
-- **Social Interaction**: View and comment on playlists and show reviews.  
+- **Contact Integration**: 
+- **Curated Digital Payments**:  
+- **User Engagement**:   
+- **Social Interaction**:  
 - **Responsive Design**: Works on desktop and mobile devices.    
 - **Vite + React + Tailwind**: Modern frontend stack for fast development and performance.
 
@@ -31,14 +30,12 @@
 1. **Clone the Repository**
 
 ```bash
-git clone [https://github.com/jordanlenhart/SceneIt.git](https://github.com/ControlAltTea/SceneIt.git)
+git clone [https://github.com/vgnilrem/HWW-CC-GROUP-PROJECT.git)
 ```
-
-2. **Switch to Merling's branch**
 
 git switch feature/back-and-frontend-PFP-and-reviews_Merling 
 
-3. **Install Frontend Dependencies**
+2. **Install Frontend Dependencies**
 ```bash
 cd frontend/
 npm install prisma@5 @prisma/client@5
@@ -59,16 +56,14 @@ npm install
 npx prisma generate
 ```
 
-6. **Run Backend Servider**
+6. **Run Backend Server**
 ```
 node server.js
 ```
 
-7. **Login instructions:**
+7. **Login and Contact Fill Out Process instructions:**
 
-Use this testing login:
-email: mehrtest@testmail.com
-password: Testing123!
+In progress
 
 ### Technologies
 - Frontend: Vite, React, TailwindCSS
