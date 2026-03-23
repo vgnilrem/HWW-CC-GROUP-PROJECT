@@ -4,7 +4,7 @@
 
 [Demo of HWW App]
 
-![REVIEWS](https://github.com/user-attachments/assets/42eb8a31-a5ef-4175-87a6-7ec5d7a6e8b2)
+![REVIEWS](comingsoon)
 
 
 [Check out the Live Demo here →](comingsoon)
