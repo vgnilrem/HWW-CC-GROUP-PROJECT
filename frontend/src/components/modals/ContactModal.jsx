@@ -71,7 +71,7 @@ export const ContactModal = ({ isScrolled }) => {
         >
           {/* Modal Panel */}
           <div
-            className="relative w-full max-w-md mx-4 my-auto p-8 bg-[#2E7D4F] border-2 border-[#3a9460] rounded-sm text-gray-300 space-y-6"
+            className="relative w-full max-w-md mx-4 my-auto p-8 bg-[#325e43] border-2 border-[#3a9460] rounded-sm text-gray-300 space-y-6"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
@@ -86,7 +86,7 @@ export const ContactModal = ({ isScrolled }) => {
             {/* Header */}
             <div className="flex justify-center">
   <div className="bg-black/30 rounded-xl p-3 w-40 h-40 flex items-center justify-center">
-    <img src="/HealthWealthnobackground.PNG" alt="HealthWealth logo" className="h-32 w-auto object-contain" />
+    <img src="/testinghwwbw.PNG" alt="HealthWealth logo" className="h-32 w-auto object-contain" />
   </div>
 </div>
 

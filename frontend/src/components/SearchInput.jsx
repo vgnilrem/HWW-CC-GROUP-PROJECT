@@ -10,9 +10,9 @@ export default function SearchInput({ value, onChange }) {
         type="text"
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        placeholder='Search for shows...'
-        className="bg-primary border text-gray/400 placeholder-gray-400/90 rounded-full px-4 mx-2 my-4 py-2 pl-10 w-full focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent transition-all duration-200"
-      />
+       placeholder='Search for Wellness...'
+  className="bg-[#325e43] border text-gray/400 placeholder-gray-400/90 rounded-full px-4 mx-2 my-4 py-2 pl-10 w-full focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent transition-all duration-200"
+/>
     </form>
   );
 };
