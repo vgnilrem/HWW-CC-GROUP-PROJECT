@@ -67,14 +67,15 @@ export default function Header() {
                 <ContactModal isScrolled={isScrolled} />
               </li>
 
-              {/* Search Icon */}
-              <li>
-                <TextSearch
-                  onClick={() => setIsSidebarOpen(true)}
-                  size={24}
-                  className='cursor-pointer hover:scale-[1.15] transition-all duration-300 hover:text-[#C9A84C]'
-                />
-              </li>
+            {/* Search Icon */}
+<li>
+  <TextSearch
+    onClick={() => setIsSidebarOpen(true)}
+    size={24}
+    className={`cursor-pointer hover:scale-[1.15] transition-all duration-300 hover:text-[#c7a655]
+      ${isScrolled ? "text-[#325e43]" : "text-[#c7a655]"}`}
+  />
+</li>
             </ul>
           </nav>
         </div>

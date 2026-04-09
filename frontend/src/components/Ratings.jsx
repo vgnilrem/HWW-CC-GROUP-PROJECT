@@ -1,4 +1,4 @@
-import { useState } from 'react';
+/*import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function Ratings({ showId }) {
@@ -36,4 +36,4 @@ export default function Ratings({ showId }) {
           ))}
         </div>
     );
-}
+}*/

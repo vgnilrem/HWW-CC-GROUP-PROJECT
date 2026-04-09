@@ -25,9 +25,9 @@ export default function Hero() {
         <p className="text-lg md:text-2xl mb-6">
           
         </p>
-        <button className="px-6 py-3 mt-10 border-2 border-gray-300/50 hover:border-gray-300 rounded-lg hover:scale-[.97] hover:text-gray-100 hover:font-medium hover:bg-green-600 transition-all duration-400 ease-in-out">
-          Our Mission
-        </button>
+        <button className="px-6 py-3 mt-10 border-2 border-gray-300/50 hover:border-gray-300 rounded-lg hover:scale-[.97] hover:text-gray-100 hover:font-medium hover:bg-[#325e43] transition-all duration-400 ease-in-out">
+  Our Mission
+</button>
       </div>
     </section>
   );
