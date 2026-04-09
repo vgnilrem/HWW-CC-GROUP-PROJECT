@@ -32,7 +32,7 @@ export default function Header() {
        <div className="flex justify-between items-center">
                  {/* Logo */}
                  <NavLink to='/' className="cursor-pointer flex items-center">
-                   <img src="/HealthWealthnobackground.PNG" alt="HealthWealth" className="h-32 w-auto object-contain" />
+                   <img src="/HealthWealthnobackground.PNG" alt="HealthWealth" className="h-36 md:h-40 w-auto object-contain"/>
                  </NavLink>
 
           {/* Nav */}
@@ -42,21 +42,29 @@ export default function Header() {
               : "text-gray-700 dark:text-gray-200"
               }`}
           >
-            <ul className="flex space-x-8 items-center text-gray-700 dark:text-gray-300 transition-all duration-200">
+            <ul className="flex space-x-10 items-center transition-all duration-200">
               {/* About Us */}
-              <NavLink to='#' className='font-semibold text-lg cursor-pointer hover:text-[#C9A84C] hover:underline'>
-                <li>About Us</li>
-              </NavLink>
+              <NavLink to='#' 
+              className={`font-semibold text-xl md:text-2xl cursor-pointer px-3 py-1 rounded-md border-2 border-transparent transition-all duration-300
+                ${isScrolled ? "text-[#325e43]" : "text-[#c7a655]"}
+                hover:border-[#c7a655]`}
+            >
+              <li>About Us</li>
+            </NavLink>
+            
+            <NavLink
+              to='#'
+              className={`font-semibold text-xl md:text-2xl cursor-pointer px-3 py-1 rounded-md border-2 border-transparent transition-all duration-300
+                ${isScrolled ? "text-[#325e43]" : "text-[#c7a655]"}
+                hover:border-[#c7a655]`}
+            >
+              <li>Donate</li>
 
-              {/* Join Us */}
-              <NavLink to='#' className='font-semibold text-lg cursor-pointer hover:text-[#C9A84C] hover:underline'
-              >
-                <li>Join Us</li>
-              </NavLink>
+            </NavLink>
 
               {/* Contact */}
               <li>
-                <ContactModal />
+                <ContactModal isScrolled={isScrolled} />
               </li>
 
               {/* Search Icon */}

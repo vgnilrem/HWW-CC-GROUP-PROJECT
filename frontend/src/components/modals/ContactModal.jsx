@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import { Mail, User, MessageSquare, Send, CheckCircle, X } from "lucide-react";
 import { createPortal } from 'react-dom';
 
-export const ContactModal = () => {
+export const ContactModal = ({ isScrolled }) => {
   const formRef = useRef();
   const [open, setOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -54,12 +54,14 @@ export const ContactModal = () => {
     <>
       {/* Navbar Trigger Button */}
       <button
-        onClick={() => setOpen(true)}
-        className="flex items-center gap-2 px-4 py-2 rounded border-2 border-[#C9A84C]/50 text-gray-300 hover:border-[#C9A84C] hover:text-[#C9A84C] transition-all duration-300 cursor-pointer"
-      >
-        <Mail className="w-4 h-4" />
-        Contact Us
-      </button>
+  onClick={() => setOpen(true)}
+  className={`flex items-center gap-2 font-semibold text-xl md:text-2xl px-3 py-1 rounded-md border-2 border-transparent transition-all duration-300 cursor-pointer
+    ${isScrolled ? "text-[#325e43]" : "text-[#c7a655]"}
+    hover:border-[#c7a655]`}
+>
+  <Mail className="w-5 h-5" />
+  Contact Us
+</button>
 
       {/* Modal — portaled to document.body so it covers the full page */}
       {open && createPortal(

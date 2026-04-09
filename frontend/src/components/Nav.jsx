@@ -74,18 +74,7 @@ const Nav = () => {
               <div className="relative mb-4 px-3">
                 <SearchInput placeholder="Search" onSearch={handleSearch} />
               </div>
-              <Link
-                to="/"
-                className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-600 transition-all duration-200"
-              >
-                Shows
-              </Link>
-              <a
-                href=""
-                className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-600 transition-all duration-200"
-              >
-                Playlists
-              </a>
+              
               {/* Contact modal trigger in mobile menu */}
               <div className="px-3 py-2">
                 <ContactModal />
