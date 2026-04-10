@@ -25,7 +25,13 @@ export default function Hero() {
         <p className="text-lg md:text-2xl mb-6">
           
         </p>
-        <button className="px-6 py-3 mt-10 border-2 border-gray-300/50 hover:border-gray-300 rounded-lg hover:scale-[.97] hover:text-gray-100 hover:font-medium hover:bg-[#325e43] transition-all duration-400 ease-in-out">
+        <button
+  onClick={() => {
+    const el = document.getElementById("mission");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  }}
+  className="px-6 py-3 mt-10 border-2 border-gray-300/50 hover:border-gray-300 rounded-lg hover:scale-[.97] hover:text-gray-100 hover:font-medium hover:bg-[#325e43] transition-all duration-400 ease-in-out"
+>
   Our Mission
 </button>
       </div>

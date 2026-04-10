@@ -34,18 +34,17 @@ const Nav = () => {
             {/* Desktop Navigation */}
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-10">
-                <Link
-                  to="/"
-                  className="hover:text-secondary transition-colors duration-200 font-normal"
-                >
-                  Shows
-                </Link>
-                <a
-                  href=""
-                  className="hover:text-secondary transition-colors duration-200 font-normal"
-                >
-                  Playlists
-                </a>
+              <Link to="/" className="hover:text-secondary transition-colors duration-200">
+  Home
+</Link>
+
+<Link to="/#mission" className="hover:text-secondary transition-colors duration-200">
+  About Us
+</Link>
+
+<Link to="/get-involved" className="hover:text-secondary transition-colors duration-200">
+  Get Involved
+</Link>
                 <ContactModal /> {/* ✅ replaces Log In + Create an Account */}
               </div>
             </div>
