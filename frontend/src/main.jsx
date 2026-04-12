@@ -5,9 +5,8 @@ import "./index.css";
 
 import Header from "./components/Header.jsx";
 import Home from "./pages/Home.jsx";
-import ContactPage from './pages/ContactPage.jsx';  // ✅ was AuthPage in components/
-import Search from "./pages/Search.jsx";
-import ShowPage from "./pages/ShowPage.jsx";
+import DonatePage from "./pages/DonatePage.jsx";
+import JoinPage from "./pages/JoinPage.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -15,11 +14,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path='/contact' element={<ContactPage />} />  {/* ✅ was /auth */}
-        <Route path="/search" element={<Search />} />
-        <Route path="/show/:id" element={<ShowPage />} />
-        {/* <Route path='/:user' element={<ProfilePage />} /> */}
-      </Routes>
+        <Route path="/donate" element={<DonatePage />} />
+       <Route path="/join" element={<JoinPage />} />
+         </Routes>
     </BrowserRouter>
   </React.StrictMode>
 );

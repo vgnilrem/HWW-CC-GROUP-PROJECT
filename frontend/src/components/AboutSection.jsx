@@ -59,7 +59,7 @@ export default function AboutSection() {
       </div>
 
       {/* Our Work */}
-      <div className="mb-20">
+       <div id="work" className="max-w-4xl mb-20 scroll-mt-32">
         <h2 className="text-2xl font-bold mb-10">Our Work</h2>
         <div className="grid md:grid-cols-4 gap-8">
         {[
@@ -94,39 +94,47 @@ export default function AboutSection() {
       </div>
 
        {/* OUR TEAM TEXT */}
-       <div className="max-w-4xl mb-20">
+       <div id="team" className="max-w-4xl mb-20 scroll-mt-32">
   <h2 className="text-2xl font-bold mb-4">Our Team</h2>
   <p className="text-gray-700 leading-relaxed">
           Grounded, accountable, and community-driven. Our team brings lived experience and professional expertise to the work of building real pathways from crisis to independence. We operate with clarity, structure, and integrity. Meeting people where they are while holding a long-term vision for stability, skill-building, and generational growth.
         </p>
       </div>
 
-      {/* TEAM PHOTOS */}
-      <div>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 justify-items-center mt-16">
-          {team.map((member, i) => (
-            <div key={i} className="flex flex-col items-center text-center">
-            <div className="w-60 h-60 cursor-pointer">
-              <img
-                src={member.image}
-                alt={member.name}
-                className="w-full h-full object-cover rounded-full"
-                onClick={() => setSelectedMember(member)}
-              />
-            </div>
-          
-            <p className="mt-4 text-black font-medium">
-              {member.name} – {member.title}
+     {/* TEAM PHOTOS */}
+<div>
+  <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 justify-items-center mt-16">
+    {team.map((member, i) => (
+      <div key={i} className="flex flex-col items-center text-center">
+        <div
+          className="w-60 h-60 cursor-pointer relative group"
+          onClick={() => setSelectedMember(member)}
+        >
+          <img
+            src={member.image}
+            alt={member.name}
+            className="w-full h-full object-cover rounded-full"
+          />
+          {/* HOVER OVERLAY */}
+          <div className="absolute inset-0 bg-black/70 rounded-full flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <p className="text-white text-xs leading-relaxed line-clamp-5">
+              {member.bio}
             </p>
           </div>
-          ))}
         </div>
+
+        <p className="mt-4 text-black font-medium">
+          {member.name} – {member.title}
+        </p>
       </div>
+    ))}
+  </div>
+</div>
 
 {/* TEAM MODAL */}
 {selectedMember && (
   <div
-    className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
+    className="fixed inset-0 bg-black/70 flex items-end justify-center pb-10 z-50"
     onClick={() => setSelectedMember(null)}
   >
     <div

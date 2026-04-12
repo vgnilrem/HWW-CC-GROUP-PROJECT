@@ -1,13 +1,19 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Mail, User, MessageSquare, Send, CheckCircle, X } from "lucide-react";
 import { createPortal } from 'react-dom';
+import emailjs from "@emailjs/browser";
 
-export const ContactModal = ({ isScrolled }) => {
+export const ContactModal = ({ isScrolled, forceOpen, onForceClose }) => {
   const formRef = useRef();
   const [open, setOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+
+  // Sync with forceOpen from SearchSidebar
+  useEffect(() => {
+    if (forceOpen) setOpen(true);
+  }, [forceOpen]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -15,22 +21,25 @@ export const ContactModal = ({ isScrolled }) => {
     setError("");
 
     try {
-      // TODO: Wire up your backend or EmailJS here.
-      // await emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", formRef.current, "YOUR_PUBLIC_KEY");
-      //
-      // Or POST to your own backend:
-      // const res = await fetch("http://localhost:8080/contact", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify({
-      //     name: formRef.current.name.value,
-      //     email: formRef.current.email.value,
-      //     message: formRef.current.message.value,
-      //   }),
-      // });
+      // Sends notification to admin@healthwealthcommunity.org
+      await emailjs.sendForm(
+        "YOUR_HWW_SERVICE_ID",
+        "YOUR_HWW_NOTIFICATION_TEMPLATE_ID",
+        formRef.current,
+        "YOUR_HWW_PUBLIC_KEY"
+      );
 
-      // Simulated success for now
-      await new Promise((res) => setTimeout(res, 1000));
+      // Sends confirmation back to the person who contacted you
+      await emailjs.send(
+        "YOUR_HWW_SERVICE_ID",
+        "YOUR_HWW_CONFIRMATION_TEMPLATE_ID",
+        {
+          name: formRef.current.name.value,
+          email: formRef.current.email.value,
+          message: formRef.current.message.value,
+        },
+        "YOUR_HWW_PUBLIC_KEY"
+      );
 
       setSubmitted(true);
       formRef.current.reset();
@@ -44,6 +53,7 @@ export const ContactModal = ({ isScrolled }) => {
 
   const handleClose = () => {
     setOpen(false);
+    if (onForceClose) onForceClose();
     setTimeout(() => {
       setSubmitted(false);
       setError("");
@@ -54,14 +64,14 @@ export const ContactModal = ({ isScrolled }) => {
     <>
       {/* Navbar Trigger Button */}
       <button
-  onClick={() => setOpen(true)}
-  className={`flex items-center gap-2 font-semibold text-xl md:text-2xl px-3 py-1 rounded-md border-2 border-transparent transition-all duration-300 cursor-pointer
-    ${isScrolled ? "text-[#325e43]" : "text-[#c7a655]"}
-    hover:border-[#c7a655]`}
->
-  <Mail className="w-5 h-5" />
-  Contact Us
-</button>
+        onClick={() => setOpen(true)}
+        className={`flex items-center gap-2 font-semibold text-xl md:text-2xl px-3 py-1 rounded-md border-2 border-transparent transition-all duration-300 cursor-pointer
+          ${isScrolled ? "text-[#325e43]" : "text-[#c7a655]"}
+          hover:border-[#c7a655]`}
+      >
+        <Mail className="w-5 h-5" />
+        Contact Us
+      </button>
 
       {/* Modal — portaled to document.body so it covers the full page */}
       {open && createPortal(
@@ -85,10 +95,10 @@ export const ContactModal = ({ isScrolled }) => {
 
             {/* Header */}
             <div className="flex justify-center">
-  <div className="bg-black/30 rounded-xl p-3 w-40 h-40 flex items-center justify-center">
-    <img src="/testinghwwbw.PNG" alt="HealthWealth logo" className="h-32 w-auto object-contain" />
-  </div>
-</div>
+              <div className="bg-black/30 rounded-xl p-3 w-40 h-40 flex items-center justify-center">
+                <img src="/testinghwwbw.PNG" alt="HealthWealth logo" className="h-32 w-auto object-contain" />
+              </div>
+            </div>
 
             {/* Error Alert */}
             {error && (
