@@ -14,10 +14,10 @@ export default function JoinPage() {
 
     try {
       await emailjs.sendForm(
-        "YOUR_HWW_SERVICE_ID",
-        "YOUR_HWW_JOIN_TEMPLATE_ID",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_JOIN_TEMPLATE,
         formRef.current,
-        "YOUR_HWW_PUBLIC_KEY"
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
 
       setSubmitted(true);
@@ -103,10 +103,12 @@ export default function JoinPage() {
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#325e43] transition-colors text-gray-600"
               >
                 <option value="">Select an option</option>
-                <option value="Volunteer">Volunteer</option>
+                <option value="Community Groups">Community Groups</option>
                 <option value="Donate">Donate</option>
                 <option value="Partner">Partner / Organization</option>
-                <option value="Receive Services">Receive Services</option>
+                <option value="Pathways">Pathways</option>
+                <option value="Outreach">Outreach</option>
+                <option value="Volunteer">Volunteer</option>
                 <option value="Other">Other</option>
               </select>
             </div>

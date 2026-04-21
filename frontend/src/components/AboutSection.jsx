@@ -16,7 +16,7 @@ const team = [
   {
     name: "Lauren",
     title: "Treasurer",
-    image: "/laurenpfp.jpg",
+    image: "/laurenpf.jpg",
     bio: "As Treasurer of Health Wealth and Community Care I am dedicated to using my extensive admin skills to handle budgeting, financial tracking, and reporting to keep things running smoothly. I am passionate about helping us grow, and will use my knowledge of both the corporate and nonprofit sectors to help do so responsibly."
   },
   {
